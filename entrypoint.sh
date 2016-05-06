@@ -26,7 +26,7 @@ fi
 : ${PASSWORD:=${MYSQL_ROOT_PASSWORD:-$MYSQL_ENV_MYSQL_ROOT_PASSWORD}}
 
 # add a cron job
-echo "$CRON_SCHEDULE root rm -rf /backups/* && mysqldump -uroot -p"$MYSQL_ENV_ROOT_PASSWORD" --all-databases --single-transaction --force -h "$MYSQL_HOST" | gzip > /backups/dump" >> /etc/crontab
+echo "$CRON_SCHEDULE root rm -rf /backups/* && mysqldump -uroot -p"$MYSQL_ENV_ROOT_PASSWORD" --all-databases --single-transaction --force -h "$MYSQL_HOST" | gzip > /backups/dump.sql.tgz" >> /etc/crontab
 crontab /etc/crontab
 
 exec "$@"
