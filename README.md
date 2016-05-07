@@ -21,3 +21,5 @@ With --link to mariadb container
 Without --link you need to specify the HOST (hostname or IP) and password
 
 `cf ic run -v volume_name:/backups -e MYSQL_HOST=xxx.xxx.xxx.xxx -e MYSQL_ROOT_PASSWORD=my_secret_pw registry.eu-gb.bluemix.net/organization/image_name`
+
+For more info see the original mariadb image https://hub.docker.com/_/mariadb/
